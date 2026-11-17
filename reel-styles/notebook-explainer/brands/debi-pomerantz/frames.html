@@ -1,0 +1,142 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#fffcf7; --surface:#fff4e4; --raised:#ffffff; --line:#eadbd0;
+  --ink:#2a1824; --ink-soft:#6b5560; --tangerine:#e85d1b; --sunshine:#ffc22e;
+  --butter:#ffe9a8; --berry:#b8255e; --blush:#f9c8d9; --cream:#fbefe6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#efe6dc;font-family:Figtree,sans-serif;padding:20px;width:1960px}
+.grid{display:grid;grid-template-columns:repeat(5,360px);gap:28px 30px}
+.cell .label{font:600 15px Figtree;color:var(--ink);margin-top:10px}
+.cell .label b{color:var(--berry)}
+.f{position:relative;width:360px;height:640px;overflow:hidden;border-radius:18px;border:2px solid var(--ink);background:#000}
+.foot{position:absolute;inset:0;background:url(photo.jpg) center 20%/cover}
+.blur{filter:blur(14px);transform:scale(1.12)}
+.tint{position:absolute;inset:0;background:rgba(42,24,36,.55)}
+/* caption */
+.cap{position:absolute;left:0;right:0;top:56%;text-align:center;font:700 34px/1 Figtree;color:var(--cream);
+  text-shadow:3px 3px 0 var(--ink);letter-spacing:-.01em}
+.cap.kw{font:400 38px/1 'Young Serif';color:var(--sunshine)}
+/* receipt zone card */
+.rc{position:absolute;left:50%;top:34px;transform:translateX(-50%);background:var(--ground);border:2px solid var(--ink);
+  border-radius:16px;box-shadow:4px 4px 0 var(--ink);padding:10px 16px;color:var(--ink);white-space:nowrap}
+.hook{position:absolute;left:0;right:0;top:40px;text-align:center}
+.hook .s{font:700 19px Figtree;color:var(--cream);text-shadow:2px 2px 0 var(--ink)}
+.hook .l{font:400 40px/1.05 'Young Serif';color:var(--sunshine);text-shadow:3px 3px 0 var(--ink)}
+.note{font:600 26px/1 Caveat;color:var(--berry)}
+.pill{display:inline-block;border-radius:999px;padding:4px 12px;font:600 13px Figtree;border:2px solid var(--ink)}
+.sun{background:var(--sunshine);color:var(--ink)}
+.but{background:var(--butter);color:var(--ink);border-color:transparent}
+.out{background:transparent;color:var(--ink-soft);border:1.5px dashed var(--ink-soft)}
+.num{font:400 34px/1 'Young Serif'}
+.small{font:500 13px Figtree;color:var(--ink-soft)}
+/* cards */
+.card{position:absolute;inset:0;padding:42px 26px;color:var(--ink)}
+.card .top{display:flex;justify-content:space-between;align-items:center;font:600 14px Figtree;margin-bottom:26px}
+.steps{display:flex;gap:5px}.steps i{display:block;width:26px;height:7px;border-radius:9px;background:rgba(42,24,36,.18)}
+.steps i.d{background:var(--ink)}.steps i.c{background:var(--tangerine)}
+.h-sans{font:700 40px/1.05 Figtree;letter-spacing:-.02em}
+.h-serif{font:400 48px/1.08 'Young Serif';margin-top:10px}
+.strike{position:relative;display:inline-block;color:var(--ink-soft)}
+.strike:after{content:"";position:absolute;left:-3px;right:-3px;top:52%;height:3px;background:var(--berry);border-radius:3px;transform:rotate(-2deg)}
+svg.hand{position:absolute;overflow:visible}
+.pad{position:absolute;inset:0;background:
+  repeating-linear-gradient(to bottom,transparent 0 35px,#e7c96f 35px 36px) 0 96px/100% 100%, var(--butter)}
+.pad:before{content:"";position:absolute;left:42px;top:0;bottom:0;width:2px;background:var(--berry);opacity:.6}
+.pad .hd{position:absolute;top:0;left:0;right:0;height:60px;background:var(--ground);border-bottom:2px solid var(--ink);
+  font:600 13px Figtree;color:var(--ink-soft);text-align:center;padding-top:22px}
+.pad ol{position:absolute;top:104px;left:54px;right:10px;font:600 25px/36px Caveat;white-space:nowrap;color:var(--ink);list-style:none}
+.meter{display:flex;align-items:center;gap:10px}
+.track{width:120px;height:12px;border-radius:9px;background:var(--surface);border:1.5px solid var(--ink);overflow:hidden}
+.track b{display:block;height:100%;background:var(--tangerine)}
+.follow{position:absolute;left:50%;transform:translateX(-50%);top:66%;display:flex;align-items:center;gap:10px;
+  background:var(--ground);border:2px solid var(--ink);border-radius:999px;padding:6px 8px 6px 6px;box-shadow:4px 4px 0 var(--ink)}
+.follow img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid var(--ink)}
+.btn{background:var(--tangerine);color:var(--ink);border:2px solid var(--ink);border-radius:999px;font:700 14px Figtree;padding:6px 14px}
+</style></head><body><div class="grid">
+
+<!-- 1 hook -->
+<div class="cell"><div class="f"><div class="foot"></div>
+  <div class="hook"><div class="s">Build your brand</div><div class="l">in 100 days</div></div>
+  <div class="cap kw">mapped</div></div>
+  <div class="label">01 Hook + captions: Figtree in cream, keyword in Young Serif sunshine, hard plum shadow</div></div>
+
+<!-- 2 counter -->
+<div class="cell"><div class="f"><div class="foot"></div>
+  <div class="rc" style="display:flex;gap:12px;align-items:center">
+    <svg width="18" height="24" viewBox="0 0 18 24"><path d="M2 2h14v20l-7-5-7 5z" fill="none" stroke="#2a1824" stroke-width="2.4" stroke-linejoin="round"/></svg>
+    <div><div class="small">saved</div><div class="num">1,204</div></div></div>
+  <div class="cap">instagram</div></div>
+  <div class="label">02 Receipt card: rolling counter on a ground card, ink border, sticker shadow</div></div>
+
+<!-- 3 strike -->
+<div class="cell"><div class="f"><div class="foot"></div>
+  <div class="rc" style="font:700 22px Figtree;display:flex;gap:10px;align-items:center">
+    <span class="strike">perfect</span><span>→</span><span class="pill sun" style="font-size:18px">posted</span></div>
+  <div class="cap">posts,</div></div>
+  <div class="label">03 Strikethrough: <b>berry</b> line through the wrong thing, sunshine pill for the right one</div></div>
+
+<!-- 4 margin note -->
+<div class="cell"><div class="f"><div class="foot"></div>
+  <div class="rc" style="padding:12px 22px 10px">
+    <div style="display:flex;gap:30px;align-items:end">
+      <div><div class="small">saved</div><div class="num">1,204</div></div>
+      <div style="position:relative;text-align:center"><div class="small">used</div><div class="num" style="color:var(--berry)">0</div>
+        <svg class="hand" style="left:-14px;top:14px" width="50" height="46" viewBox="0 0 50 46"><path d="M28 5C13 3 4 13 5 26s14 18 27 15 15-18 10-29C38 5 28 2 20 6" fill="none" stroke="#b8255e" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+    </div>
+    <div class="note" style="transform:rotate(-3deg);margin-top:6px;text-align:right">the real issue</div></div>
+  <div class="cap kw">absolutely</div></div>
+  <div class="label">04 Margin note (replaces grayscale): berry circle draws around the punchline</div></div>
+
+<!-- 5 blur card -->
+<div class="cell"><div class="f"><div class="foot blur"></div><div class="tint"></div>
+  <div style="position:absolute;left:26px;right:26px;top:170px;color:var(--cream)">
+    <div style="font:700 30px/1.15 Figtree">this plan is for<br>people with</div>
+    <div style="font:400 50px/1.1 'Young Serif';color:var(--sunshine);margin-top:6px">full lives.</div>
+    <div class="note" style="color:var(--blush);margin-top:12px">not more hours</div></div></div>
+  <div class="label">05 Quote card: blurred footage under a flat plum tint (no gradient)</div></div>
+
+<!-- 6 chapter butter -->
+<div class="cell"><div class="f" style="background:var(--butter)"><div class="card">
+  <div class="top"><span>Days 1–14</span><span class="steps"><i class="c"></i><i></i><i></i><i></i></span></div>
+  <div class="h-sans">the first<br>2 weeks:</div>
+  <div class="h-serif">empty your brain.</div>
+  <div class="small" style="position:absolute;bottom:40px;left:26px">Step 1 of 4</div></div></div>
+  <div class="label">06 Chapter card on butter: stepper + "Step 1 of 4", payoff on its own serif line</div></div>
+
+<!-- 7 notepad -->
+<div class="cell"><div class="f"><div class="pad"><div class="hd">brain dump</div>
+  <ol><li>1. every idea you've saved</li><li>2. every question people ask</li><li>3. every skill you have</li><li>4. every story worth telling</li></ol>
+  <svg class="hand" style="left:262px;top:150px" width="60" height="120" viewBox="0 0 60 120"><g transform="rotate(30 30 60)"><rect x="24" y="0" width="12" height="96" rx="2" fill="#ffc22e" stroke="#2a1824" stroke-width="2"/><path d="M24 96l6 18 6-18z" fill="#f4dcc0" stroke="#2a1824" stroke-width="2" stroke-linejoin="round"/><rect x="24" y="0" width="12" height="12" fill="#f9c8d9" stroke="#2a1824" stroke-width="2"/></g></svg>
+  </div></div>
+  <div class="label">07 Notepad: butter paper, Caveat writes on in ink, berry margin rule</div></div>
+
+<!-- 8 meter -->
+<div class="cell"><div class="f"><div class="foot"></div>
+  <div class="rc"><div class="meter"><div class="track"><b style="width:44%"></b></div>
+    <div><span class="num" style="font-size:26px">day 44</span> <span class="small">of 100</span></div></div>
+    <div class="note" style="font-size:20px;color:var(--ink-soft);margin-top:2px">+ 12 posts of proof</div></div>
+  <div class="cap">people</div></div>
+  <div class="label">08 The climbing meter: pill track fills in tangerine, chapter by chapter</div></div>
+
+<!-- 9 flood -->
+<div class="cell"><div class="f" style="background:var(--ground)">
+  <div style="position:absolute;left:0;right:0;bottom:0;height:62%;background:var(--sunshine)"></div>
+  <div class="card">
+  <div class="top"><span>Month 3</span><span class="steps"><i class="d"></i><i class="d"></i><i class="c"></i><i></i></span></div>
+  <div class="h-sans">where we<br>build</div>
+  <div class="h-serif">momentum.</div></div></div>
+  <div class="label">09 Ground → sunshine flood (mid-wipe), once per video, no margin note here</div></div>
+
+<!-- 10 cta -->
+<div class="cell"><div class="f"><div class="foot"></div>
+  <div class="rc" style="font:700 20px Figtree">comment <span style="font:400 22px 'Young Serif'">clarity</span></div>
+  <div class="cap" style="top:50%">along.</div>
+  <div class="follow"><img src="headshot.jpg"><div style="font:700 13px Figtree;color:var(--ink);white-space:nowrap">Debi Pomerantz<div class="small" style="font-size:11px">brand + business clarity</div></div><span class="btn">Follow</span>
+  <svg style="position:absolute;right:16px;bottom:-16px" width="22" height="26" viewBox="0 0 22 26"><path d="M2 2l16 11-7 1 4 9-3 1-4-9-6 5z" fill="#fffcf7" stroke="#2a1824" stroke-width="2" stroke-linejoin="round"/></svg></div></div>
+  <div class="label">10 Close: the one tangerine action, Follow card with cursor click</div></div>
+
+</div></body></html>
